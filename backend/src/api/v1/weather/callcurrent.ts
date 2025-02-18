@@ -1,10 +1,12 @@
 import { Hono } from "hono";
 import { config } from "dotenv";
 import wretch from "wretch";
+import { cors } from "hono/cors";
 
 config(); // โหลดค่า .env
 
 const app = new Hono();
+app.use('*', cors({ origin: 'https://weather-app.tony219y.com' }));
 
 app.get("/test", async (c) => {
   const province = c.req.query("province") || '';
