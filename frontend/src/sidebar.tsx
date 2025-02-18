@@ -91,7 +91,7 @@ function Sidebar({ onWeatherDataReceived }: SidebarProps) {
     event.preventDefault();
     try {
       const response = await wretch(
-        `/api/v1/weather/current/test?province=${selectedProvince}&district=${selectedDistrict}`
+        `https://api-weather-app.tony219y.com/api/v1/weather/current/test?province=${selectedProvince}&district=${selectedDistrict}`
       )
         .get()
         .json<WeatherData>();
