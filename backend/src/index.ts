@@ -1,9 +1,15 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import weatherCurrent from './api/v1/weather/callcurrent.js'
+import { cors } from 'hono/cors'
 const app = new Hono()
-import { cors } from "hono/cors";
-app.use('*', cors({ origin: 'https://weather-app.tony219y.com' }));
+
+// ใช้ CORS middleware จาก hono
+app.use(cors({
+  origin: 'https://weather-app.tony219y.com/',  // หรือระบุโดเมนที่อนุญาต
+  allowHeaders: ['Content-Type', 'Authorization']  // กำหนด headers ที่อนุญาต
+}))
+
 
 app.route('/api/v1/weather/current', weatherCurrent)
 
