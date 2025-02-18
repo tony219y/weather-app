@@ -13,9 +13,9 @@ app.get("/test", async (c) => {
   const token = process.env.API_KEY;
   const today = new Date();
   const date = today.toISOString().split('T')[0]; // วันที่ในรูปแบบ YYYY-MM-DD
-  console.log("date: ", date);
-  const hour = today.getHours(); // ชั่วโมงในรูปแบบ 0-23
-  console.log("hour: ", hour);
+  // console.log("date: ", date);
+  const hour = new Date().getHours(); // ชั่วโมงปัจจุบันในรูปแบบ 0-23
+  // console.log("hour: ", hour);
 
   const url2 = `https://data.tmd.go.th/nwpapi/v1/forecast/location/hourly/place?province=${encodeURIComponent(province)}&amphoe=${encodeURIComponent(amphoe)}&fields=tc,rh&date=${date}&hour=${hour}&duration=2`; //current time
   // const url = `https://data.tmd.go.th/nwpapi/v1/forecast/location/daily/place?province=${encodeURIComponent(province)}&amphoe=${encodeURIComponent(amphoe)}&fields=tc,rh&date=${date}&duration=2`;
