@@ -35,8 +35,8 @@ interface CardWeatherProps {
 
 const CardWeather: React.FC<CardWeatherProps> = ({ weatherData }) => {
   if (!weatherData) {
-    return <div className="flex justify-center items-center h-[600px] w-[350px] p-4 rounded-xl bg-gradient-to-b from-blue-500 to-indigo-700">
-            <h1 className="text-white text-xl font-bold animate-bounce">Choose Province and District</h1>
+    return <div className="flex justify-center items-center min-h-[600px] w-[350px] h-fit p-4 rounded-xl bg-gradient-to-b from-blue-500 to-indigo-700 max-md:w-full max-md:p-2 max-md:ml-10">
+            <h1 className="text-center text-white text-xl font-bold animate-bounce max-md:text-sm">Choose Province and District</h1>
         </div>
   }
 
@@ -63,7 +63,7 @@ const CardWeather: React.FC<CardWeatherProps> = ({ weatherData }) => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-[600px] h-fit w-[350px] p-4 rounded-xl bg-gradient-to-b from-blue-500 to-indigo-700">
+    <div className="flex justify-center items-center min-h-[600px] h-fit w-[350px] p-4 rounded-xl bg-gradient-to-b from-blue-500 to-indigo-700 max-md:ml-10">
       <div className="flex flex-col h-full bg-white bg-opacity-30 backdrop-blur-md rounded-xl shadow-lg p-6 w-full max-w-md">
         <h1 className="text-3xl text-white mb-6 text-center">Weather</h1>
         <div className="flex flex-col items-center h-fit w-full p-4 gap-4">

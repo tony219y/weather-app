@@ -105,7 +105,7 @@ function Sidebar({ onWeatherDataReceived }: SidebarProps) {
   return (
     <div
       id="banner"
-      className="flex flex-col bg-[#1c1c1c] text-white h-screen w-[300px] transition-all duration-300 max-md:fixed max-md:top-0 max-md:left-0 max-md:w-full max-md:h-full max-md:z-50"
+      className="flex flex-col bg-[#1c1c1c] text-white h-screen w-[300px] transition-all duration-300 max-md:fixed max-md:top-0 max-md:left-0 max-md:z-50"
     >
       <button
         id="btn"
