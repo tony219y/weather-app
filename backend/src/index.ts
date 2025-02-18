@@ -6,7 +6,7 @@ const app = new Hono()
 
 // สร้าง CORS middleware ที่กำหนดเอง
 app.use('*', async (c, next) => {
-  c.res.headers.set('Access-Control-Allow-Origin', 'https://weather-app.tony219y.com/');
+  c.res.headers.set('Access-Control-Allow-Origin', 'https://weather-app.tony219y.com');
   c.res.headers.set('Access-Control-Allow-Methods', 'GET, POST');
   c.res.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
