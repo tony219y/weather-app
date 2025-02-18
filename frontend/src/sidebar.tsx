@@ -94,9 +94,10 @@ function Sidebar({ onWeatherDataReceived }: SidebarProps) {
       const response = await wretch(
         `https://weather-app.tony219y.com/api/v1/weather/current/test?province=${selectedProvince}&district=${selectedDistrict}`
       )
-        .get()
-        .json<WeatherData>();
+      .get()
+      .json<WeatherData>();
       onWeatherDataReceived(response); // ส่งข้อมูลที่ได้รับกลับไปยัง CardWeather
+      toggleSidebar(); //close sidebar
     } catch (error) {
       console.error("Error fetching weather data:", error);
     }
