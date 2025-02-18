@@ -4,7 +4,6 @@ import provinces from "./assets/provinces.json";
 import districts from "./assets/district.json";
 import wretch from "wretch";
 
-
 import {
   Select,
   SelectLabel,
@@ -93,7 +92,7 @@ function Sidebar({ onWeatherDataReceived }: SidebarProps) {
     event.preventDefault();
     try {
       const response = await wretch(
-        `/api/v1/weather/current/test?province=${selectedProvince}&district=${selectedDistrict}`
+        `https://weather-app.tony219y.com/api/v1/weather/current/test?province=${selectedProvince}&district=${selectedDistrict}`
       )
         .get()
         .json<WeatherData>();
@@ -106,7 +105,7 @@ function Sidebar({ onWeatherDataReceived }: SidebarProps) {
   return (
     <div
       id="banner"
-      className="flex flex-col bg-[#1c1c1c] text-white h-screen w-[300px] relative transition-all duration-300"
+      className="flex flex-col bg-[#1c1c1c] text-white h-screen w-[300px] transition-all duration-300 max-md:fixed max-md:top-0 max-md:left-0 max-md:w-full max-md:h-full max-md:z-50"
     >
       <button
         id="btn"
