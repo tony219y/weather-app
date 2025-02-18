@@ -2,6 +2,8 @@ import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import weatherCurrent from './api/v1/weather/callcurrent.js'
 const app = new Hono()
+import { cors } from "hono/cors";
+app.use('*', cors({ origin: 'https://weather-app.tony219y.com' }));
 
 app.route('/api/v1/weather/current', weatherCurrent)
 

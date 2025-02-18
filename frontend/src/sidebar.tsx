@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import provinces from "./assets/provinces.json";
 import districts from "./assets/district.json";
 import wretch from "wretch";
+
+
 import {
   Select,
   SelectLabel,
@@ -91,7 +93,7 @@ function Sidebar({ onWeatherDataReceived }: SidebarProps) {
     event.preventDefault();
     try {
       const response = await wretch(
-        `https://api-weather-app.tony219y.com/api/v1/weather/current/test?province=${selectedProvince}&district=${selectedDistrict}`
+        `/api/v1/weather/current/test?province=${selectedProvince}&district=${selectedDistrict}`
       )
         .get()
         .json<WeatherData>();
