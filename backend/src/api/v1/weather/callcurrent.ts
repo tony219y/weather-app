@@ -1,6 +1,9 @@
 import { Hono } from "hono";
 import { config } from "dotenv";
 import wretch from "wretch";
+import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
+
 
 config(); // โหลดค่า .env
 
@@ -14,7 +17,7 @@ app.get("/test", async (c) => {
   const today = new Date();
   const date = today.toISOString().split('T')[0]; // วันที่ในรูปแบบ YYYY-MM-DD
   console.log("date: ", date);
-  const hour = new Date().getHours(); // ชั่วโมงปัจจุบันในรูปแบบ 0-23
+  const hour = DateTime.now().setZone('Asia/Bangkok').hour; // ชั่วโมงปัจจุบันในรูปแบบ 0-23
   console.log("hour: ", hour);
 
   const url2 = `https://data.tmd.go.th/nwpapi/v1/forecast/location/hourly/place?province=${encodeURIComponent(province)}&amphoe=${encodeURIComponent(amphoe)}&fields=tc,rh&date=${date}&hour=${hour}&duration=2`; //current time
@@ -34,5 +37,6 @@ app.get("/test", async (c) => {
     return c.json({ error: "ไม่สามารถดึงข้อมูลสภาพอากาศได้" }, 500);
   }
 });
+
 
 export default app;

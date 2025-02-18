@@ -8,12 +8,15 @@
   "dependencies": {
     "@hono/node-server": "^1.13.8",
     "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "dayjs-plugin-utc": "^0.1.2",
     "dotenv": "^16.4.7",
     "hono": "^4.7.1",
     "wretch": "^2.11.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
+    "@types/luxon": "^3.4.2",
     "@types/node": "^20.11.17",
     "tsx": "^4.7.1"
   }
