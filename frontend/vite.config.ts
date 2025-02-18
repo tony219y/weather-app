@@ -12,7 +12,7 @@ export default defineConfig({
   },
   server:{
     proxy:{
-      '/api': 'http://localhost:3000'
+      '/api': 'https://api-weather-app.tony219y.com/'
     }
   }
 });
